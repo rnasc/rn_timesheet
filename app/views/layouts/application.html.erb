@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RnTimesheet</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>  
+    
+    <% if current_user %>
+      <h2>Usuário logado: <%= current_user.email %></h2>
+      <%= link_to destroy_user_session_path, method: :delete do %>
+        Sair da aplicação
+      <% end %>
+    <% else %>
+      <h2>Por favor faça seu login</h2>
+      <%= link_to new_user_session_path do %>
+        Login  
+      <% end %>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>
