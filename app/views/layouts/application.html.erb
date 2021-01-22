@@ -13,7 +13,6 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>  
-    
     <% if current_user %>
       <h2>Usuário logado: <%= current_user.email %></h2>
       <%= link_to destroy_user_session_path, method: :delete do %>
@@ -26,5 +25,7 @@
       <% end %>
     <% end %>
     <%= yield %>
+
+    <h4>Rodapé</h4>
   </body>
 </html>
