@@ -1,24 +1,26 @@
-# README
+# Timesheet (Controle de horas)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+*This is the English version - As this is a Portuguese language project, 
+please also refer to the [pt_BR file](README.pt_BR.md) for more details.<br>
+Para Português, veja a [versão pt_BR](README.pt_BR.md)*
 
-Things you may want to cover:
+This is a project created to share my experience (as well as any lack of experience thereof) on web development with the developers comunity.
 
-* Ruby version
+I'll have reached my goal if we use this project as a starting point for leaning, discussing and discovery.
 
-* System dependencies
+I don't intend to create here the perfect product, byt the best possible product we can build togather. 
 
-* Configuration
+## What we're doing
 
-* Database creation
+We are developing together a Ruby on Rails complete application, starting from the basics and moving all the way into production deploy.
 
-* Database initialization
+## Functional requirements
 
-* How to run the test suite
+The functional requirements for this application ar:
+* Control timesheets (*controle de horas*) of an employee/business partner, allowing him/her to add details and comments as well as eventually attaching documents (i.e. proof of doctors appointment in case of a medical leave).
 
-* Services (job queues, cache servers, search engines, etc.)
+## Technical environment
 
-* Deployment instructions
-
-* ...
+For this application we'll need:
+* To identify the user with name, address and allowing (optionally) him/her to add a picture.
+* Control the application access through email/password authentication.
