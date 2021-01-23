@@ -1,1 +1,14 @@
-<h1>Hello World!</h1>
+<%= stylesheet_link_tag 'main' %>
+
+<div class="box">
+  <% if current_user %>
+    <h3>Olá <%=current_user.email%></h3>
+    <p>Se precisar de ajude contacte: +55 11 9.9999-9999</p>
+  <% else %>
+    <h3>Olá! Seja bem vindo ao controle de Timesheet.</h3>
+    <p>
+      Nesta aplicação você poderá controlar seus horários
+      e reportá-los. 
+    </p>
+  <% end %>
+</div>

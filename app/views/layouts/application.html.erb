@@ -1,39 +1,40 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RnTimesheet</title>
+    <title>Timesheet - Controle de Horas</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%# <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %> %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap" 
+      rel="stylesheet"
+    >
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>  
-    <% if current_user %>
-      <h2>Usuário logado: <%= current_user.email %></h2>
-      <%= link_to destroy_user_session_path, method: :delete do %>
-        Sair da aplicação
-      <% end %>
-    <% else %>
-      <h2>Por favor faça seu login</h2>
-      <%= link_to new_user_session_path do %>
-        Login  
-      <% end %>
+    <% if notice %>
+      <div class="alert"><%= notice %></div>
     <% end %>
-    <%= yield %>
+    <% if alert %>
+      <div class="alert"><%= alert %></div>
+    <% end %>
 
-    <h4>Rodapé</h4>
+    <%= render 'layouts/nav/topbar' %>
+    
+    <div class="container">
+      <%= yield %>
+    </div>
+
+   <script>
+    $(".alert").fadeTo(3000, 500).slideUp(500, function () {
+      $(".alert").slideUp(500);
+    });
+  </script>
+
   </body>
-
-<script>
-$(document).ready(function(){
-  console.log('Ola mundo! Sou um script jQuery');
-})
-</script>
-
 </html>

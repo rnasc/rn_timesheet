@@ -1,1 +1,43 @@
 @import "~bootstrap/scss/bootstrap";
+
+* {
+  font-family: "Oswald", "sans-serif";
+}
+
+:root {
+  font-size: 16px;
+
+  --bg-basic: #f3f3f8;
+  --bg-enhenced: #fff;
+  --alert-bg: rgba(255, 219, 59, 0.7);
+  --shadow: rgba(0, 0, 0, 0.15);
+}
+
+body {
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-basic);
+}
+
+.box {
+  padding: 1rem;
+  margin-top: 1rem;
+  background-color: var(--bg-enhenced);
+
+  border-radius: 12px;
+  box-shadow: 1px 3px 4px 1px var(--shadow);
+}
+
+.alert {
+  text-align: center;
+  font-weight: bold;
+  background-color: var(--alert-bg);
+  width: 60%;
+  z-index: 9999;
+
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
