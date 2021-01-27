@@ -10,4 +10,32 @@ th {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
+
+  a {
+    margin-left: 1rem;
+  }
+  input {
+    margin-left: 1rem;
+  }
+}
+
+label {
+  width: 100px;
+  margin: 0.5rem 0;
+}
+
+.field {
+  display: flex;
+  flex-direction: row;
+}
+.form-control {
+  display: flex;
+  width: auto;
+  margin: 0.5rem 0;
+}
+input {
+  flex: 1;
+}
+input[type="submit"] {
+  flex: 0;
 }

@@ -1,24 +1,6 @@
-<p id="notice"><%= notice %></p>
+<div class="box">
+  <h1>Exibir projeto</h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @project.name %>
-</p>
+  <%= render 'form', project: @project, action: 'show' %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
-
-<p>
-  <strong>Begin:</strong>
-  <%= @project.begin %>
-</p>
-
-<p>
-  <strong>End:</strong>
-  <%= @project.end %>
-</p>
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+</div>

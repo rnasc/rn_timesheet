@@ -1,3 +1,16 @@
+<%= stylesheet_link_tag 'projects' %>
+<%
+  action = local_assigns.fetch :action, 'edit'
+
+  if action == 'edit' ||
+     action == 'new'
+    disabled = false
+  else
+    disabled = true
+  end
+%>
+
+
 <%= form_with(model: project) do |form| %>
   <% if project.errors.any? %>
     <div id="error_explanation">
@@ -13,25 +26,36 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, disabled: disabled, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_field :description %>
+    <%= form.text_field :description, disabled: disabled, class: 'form-control'%>
   </div>
 
   <div class="field">
     <%= form.label :begin %>
-    <%= form.date_select :begin %>
+    <%= form.date_select :begin,{:order => [:day, :month, :year]}, class: 'form-control', disabled: disabled %>
   </div>
 
   <div class="field">
     <%= form.label :end %>
-    <%= form.date_select :end %>
+    <%= form.date_select :end, {:order => [:day, :month, :year]}, class: 'form-control', disabled: disabled %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="button-container">
+    <% if action == 'edit' || action == 'new' %>
+      <% if action == 'edit' %>
+        <%= link_to 'Apagar', project_path(project), method: :delete, class: 'btn btn-outline-danger' %>
+      <% end %>
+      <%= link_to 'Voltar', projects_path, class: 'btn btn-outline-primary' %>
+      <%= form.submit class: 'btn btn-outline-primary' %>
+    <% else %>
+      <% if current_user.admin %>
+        <%= link_to 'Editar', edit_project_path(project), class: 'btn btn-outline-primary' %>
+      <% end %>
+      <%= link_to 'Voltar', projects_path, class: 'btn btn-outline-primary' %>
+    <%end %>
   </div>
 <% end %>
